@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>C# Documentation</header>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Hello_world">Hello world</a></li>
+        <li><a class="nav-link" href="#Types">Types</a></li>
+        <li><a class="nav-link" href="#Keywords">Keywords</a></li>
+        <li><a class="nav-link" href="#Operators_and_expressions">Operators and expressions</a></li>
+        <li><a class="nav-link" href="#Statements">Statements</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p class="documentation">
+          C# is the most popular language for the .NET platform, a free, cross-platform, open-source development environment. It enables developers to write applications for IoT devices, the cloud, phones, desktops, laptops, and servers.
+          </p>
+          <p class="documentation">
+As a cross-platform, general-purpose language, C# boosts developer productivity while ensuring high performance. Its broad ecosystem support spans all .NET workloads. Rooted in object-oriented principles, C# also incorporates features from other paradigms, including functional programming. Low-level features allow for high-efficiency scenarios without requiring unsafe code. The majority of the .NET runtime and libraries are written in C#, ensuring that advancements in C# benefit all .NET developers.
+</p>
+      </section>
+      <section class="main-section" id="Hello_world">
+        <header>Hello world</header>
+        <p class="documentation">To introduce you to the C# programming language, see the below "Hello, World" program:</p>
+        <code>// This line prints "Hello, World"
+        Console.WriteLine("Hello, World");</code>
+      </section>
+      <section class="main-section" id="Types">
+        <header>Types</header>
+        <p class="documentation">C# types are categorized into two main groups:</p>
+          <h3>Value Types</h3>
+          <p class="documentation">
+    Variables of value types contain the actual instance of the type.</p>
+    <p class="documentation">
+    When assigned, passed as arguments, or returned from methods, the value is copied.
+    </p>
+<h3>Reference Types</h3>
+<p class="documentation">
+    Variables of reference types contain a reference (pointer) to the instance, not the instance itself.
+    </p>
+    <p class="documentation">
+    When assigned, passed as arguments, or returned from methods, only the reference is copied, not the instance.
+    </p>
+<p class="documentation">
+In summary, value types store the data directly, while reference types store a pointer to the data. Value types are copied by value, and reference types are copied by reference.</p>
+      </section>
+      <section class="main-section" id="Keywords">
+        <header>Keywords</header>
+        <p class="documentation">
+          Keywords are reserved identifiers with special meanings to the compiler. They cannot be used as variable or method names unless prefixed with @ (e.g., @if is valid, but if is not). There are two types of keywords in C#:
+          </p>
+          <p class="documentation">
+            Reserved Keywords: These cannot be used as identifiers anywhere in the program.
+    Contextual Keywords: These have special meaning only in specific contexts and can be used as identifiers outside those contexts.
+          </p>
+          <p class="documentation">
+            As new keywords are introduced in C#, they are typically added as contextual keywords to avoid breaking existing programs written in earlier versions.
+        </p>
+      </section>
+      <section class="main-section" id="Operators_and_expressions">
+        <header>Operators and expressions</header>
+        <p class="documentation">
+          C# provides various operators that can be used with built-in types to perform basic operations. These include:
+          </p>
+          <ul>
+            <li>
+              Arithmetic Operators: Perform arithmetic operations on numeric operands (e.g., +, -, *, /, %).
+            </li>
+            <li>
+              Comparison Operators: Compare numeric operands (e.g., ==, !=, >, <, >=, <=).
+            </li>
+            <li>
+              Logical Operators: Perform logical operations on bool operands (e.g., &&, ||, !).
+            </li>
+            <li>
+              Bitwise and Shift Operators: Perform bitwise or shift operations on integral types.
+            </li>
+            <li>
+              Equality Operators: Check if operands are equal or not (e.g., ==, !=).
+            </li>
+          </ul>
+          <p class="documentation">
+            These operators can be overloaded to specify behavior for user-defined types. Expressions in C# can be formed by combining literals, variables, and operators. Operator precedence and associativity determine the order of evaluation, which can be altered using parentheses.
+          </p>
+      </section>
+      <section class="main-section" id="Statements">
+        <header>Statements</header>
+        <h3>Declaration statements</h3>
+        <p class="documentation">A declaration statement declares a new local variable, local constant, or local reference variable. To declare a local variable, specify its type and provide its name. You can declare multiple variables of the same type in one statement.</p>
+        <code>string greeting;
+          int a, b, c;
+          List&lt;double&gt; xs;</code>
+        <h3>Exception-handling statements</h3>
+        <p class="documentation">Use the try-catch statement to handle exceptions that might occur during execution of a code block. Place the code where an exception might occur inside a try block. Use a catch clause to specify the base type of exceptions you want to handle in the corresponding catch block</p>
+        <code>try
+{
+<span class="indent">var result = Process(-3, 4);</span>
+<span class="indent">Console.WriteLine($"Processing succeeded: {result}");</span>
+}
+catch (ArgumentException e)
+{
+<span class="indent">Console.WriteLine($"Processing failed: {e.Message}");</span>
+}</code>
+        <h3>Iteration statements</h3>
+        <p class="documentation">C# provides several iteration statements to repeatedly execute a block of code:
+          </p>
+          <ul>
+            <li>
+              for loop: Executes a block of code while a specified Boolean expression is true.
+            </li>
+            <li>
+              foreach loop: Enumerates elements in a collection and executes a block of code for each element.
+            </li>
+            <li>
+              do...while loop: Executes a block of code at least once, then continues executing it while a specified condition is true.
+            </li>
+            <li>
+              while loop: Executes a block of code repeatedly while a specified condition is true. May not execute at all if the condition is initially false.
+            </li>
+          </ul>
+          <p class="documentation">
+            Within any of these loops, you can:
+          </p>
+            <ul>
+              <li>
+                Use the break statement to exit the loop prematurely.
+              </li>
+              <li>
+                Use the continue statement to skip the current iteration and move to the next one.
+              </li>
+            </ul>
+          <p class="documentation">
+            These iteration statements allow you to control the flow of execution based on specific conditions or collections.
+          </p>
+        <code>for (int i = 0; i < 3; i++)
+        {
+            <span class="indent">Console.Write(i);</span>
+        }
+        // Output:
+        // 012</code>
+        <h3>Selection statements</h3>
+        <p class="documentation">
+          C# provides several conditional statements to control the flow of execution based on certain conditions or expressions:
+          </p>
+          <ul>
+            <li>if statement: Executes a block of code if a specified Boolean expression evaluates to true.</li>
+            <li>if-else statement: Executes one block of code if a Boolean expression is true, and another block if it's false.</li>
+            <li>switch statement: Evaluates an expression and executes the associated block of code based on a pattern match with the expression's value.</li>
+          </ul>
+        <p class="documentation">
+          These statements allow you to create branching logic in your program, enabling different code paths to be executed based on specific conditions or values. The if and if-else statements are useful for simple conditional checks, while the switch statement is more suitable for multiple conditions or cases.
+        </p>
+        <code>DisplayWeatherReport(15.0);  // Output: Cold.
+              DisplayWeatherReport(24.0);  // Output: Perfect!
+              
+              void DisplayWeatherReport(double tempInCelsius)
+              {
+                <span class="indent">if (tempInCelsius < 20.0)</span>
+                <span class="indent">{</span>
+                <span class="indent"><span class="indent">Console.WriteLine("Cold.");</span></span>
+                <span class="indent">}</span>
+                <span class="indent">else</span>
+                <span class="indent">{</span>
+                <span class="indent"><span class="indent">Console.WriteLine("Perfect!");</span></span>
+                <span class="indent">}</span>
+              }</code>
+      </section>      
+    </main>
+  </body>
+</html>
