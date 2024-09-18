@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <h1 id="title">Survey Form</h1>
+      <p id="description">Please complete the below survey form to give your feedback.</p>
+      <form id="survey-form">
+        <fieldset>
+          <label id="name-label" for="name">Name: <input id="name" name="name-input" type="text" required placeholder="Enter your name" /></label>
+          <label id="email-label" for="email">Email: <input id="email" name="email-input" type="email" required placeholder="Enter your email" /></label>
+          <label id="number-label" for="number">Age (optional): <input id="number" name="age-input" type="number" min=13 max=120 placeholder="Enter your age" /></label>
+          <label id="gender-label" for="dropdown">Gender:
+            <select id="dropdown" name="gender-input">
+              <option value="">(select one)</option>
+              <option value=1>Male</option>
+              <option value=2>Female</option>
+              <option value=3>Prefer not to say</option>
+            </select>
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Satisfication:</legend>
+        <label id="excellent-label" for="excellent-input"><input id="excellent-input" type="radio" name="satisfication-option" value="excellent" class="inline" /> Excellent</label>
+        <label id="good-label" for="good-input"><input id="good-input" type="radio" name="satisfication-option" value="good" class="inline" /> Good</label>
+        <label id="neutral-label" for="neutral-input"><input id="neutral-input" type="radio" name="satisfication-option" value="neutral" class="inline" checked/> Neutral</label>
+        <label id="bad-label" for="bad-input"><input id="bad-input" type="radio" name="satisfication-option" value="bad" class="inline" /> Bad</label>
+        <label id="verybad-label" for="verybad-input"><input id="verybad-input" type="radio" name="satisfication-option" value="verybad" class="inline" /> Very Bad</label>
+        </fieldset>
+        <fieldset>
+          <legend>Areas for Improvement: (check all that apply)</legend>
+          <label id="speed-label" for="speed-input">
+            <input id="speed-input" value="speed" type="checkbox" class="inline">
+            Speed
+          </label>
+          <label id="quality-label" for="quality-input">
+            <input id="quality-input"  value="quality" type="checkbox" class="inline">
+            Quality
+          </label>
+          <label id="communication-label" for="communication-input">
+            <input id="communication-input"  value="communication" type="checkbox" class="inline">
+            Communication
+          </label>
+        </fieldset>
+        <label id="comments-label" for="comments-input">Comments:
+          <textarea id="comments-input" name="comments-input" rows=3 cols=30 placeholder="Enter your comments here...">
+          </textarea>
+        </label>
+        <input id="submit" type="submit" value="Submit">
+      </form>
+    </main>
+  </body>
+  <footer>
+    
+  </footer>
+</html>
