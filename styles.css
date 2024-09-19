@@ -1,3 +1,14 @@
+:root {
+    --black: #0A0A0AFF;
+    --white: #F8F8F8FF;
+    --muted-white: #F8F8F8CC;
+    --jet: #353535ff;
+    --caribbean-current: #3c6e71ff;
+    --platinum: #d9d9d9ff;
+    --indigo-dye: #284b63ff;
+    --bright-pink: #F7567CFF;
+}
+
 *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -17,7 +28,7 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: sans-serif;
-    min-width:  320px;
+    min-width:  20rem;
     min-height: 100vh;
 }
 
@@ -31,9 +42,9 @@ main {
 }
 
 footer {
-    background-color: #0A0A0A;
+    background-color: var(--black);
     bottom: 0;
-    color: #F8F8F8CC;
+    color: var(--muted-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,24 +95,28 @@ button {
 
 button.accordion::after {
     content: '\002B';
-    color: #777;
+    color: var(--platinum);
     font-weight: bold;
     float: right;
     margin-left: 5px;
 }
 
+button.accordion.active::after {
+    content: '\002D';
+    color: var(--platinum);
+    font-weight: bold;
+    float: right;
+    margin-left: 0.3rem;
+}
+
 .accordion {
-    background-color: #eee;
-    color: #444;
+    background-color: var(--jet);
+    color: var(--platinum);
     cursor: pointer;
-    padding: 18px;
+    padding: 1rem;
     width: 100%;
     text-align: left;
     transition: 0.4s;
-}
-
-.active, .accordion:hover {
-    background-color: #ccc;
 }
 
 .header-section {
@@ -109,12 +124,85 @@ button.accordion::after {
 }
 
 .panel {
-    padding: 1rem 18px;
-    background-color: white;
+    background-color: var(--platinum);
     display: none;
     overflow: hidden;
+    grid-template-columns: auto auto;
 }
 
 .projects-section {
     padding-bottom: 7rem;
 }
+
+.card p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  
+  .card p.small {
+    font-size: 0.8rem;
+  }
+  
+  .go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background-color: var(--indigo-dye);
+    border-radius: 0 0.25rem 0 2rem;
+  }
+  
+  .go-arrow {
+    margin-top: -0.25rem;
+    margin-right: -0.25rem;
+    color: var(--white);
+    font-family: courier, sans;
+  }
+  
+  .card {
+    display: block;
+    top: 0px;
+    position: relative;
+    max-width: 262px;
+    background-color: var(--white);
+    border-radius: 4px;
+    padding: 32px 24px;
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    border: 1px solid #f2f8f9;
+  }
+  
+  .card:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid #ccc;
+    background-color: white;
+  }
+  
+  .card:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: var(--bright-pink);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+  }
+  
+  .card:hover:before {
+    transform: scale(2.15);
+  }
+  
